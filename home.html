@@ -12,11 +12,9 @@
     #cart-icon { display: inline-block; cursor: pointer; }
     main { padding: 20px; }
     .home { display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
-    .home img { width: 300px; border-radius: 15px; flex-shrink: 0;  transition: transform 0.3s ease; }
+    .home img { width: 300px; border-radius: 60px; flex-shrink: 0;  transition: transform 0.3s ease; }
     .home img:hover {transform: scale(1.1);}
     .home .keterangan { margin-top: 0; color: white; max-width: 800px; }
-    button { background-color: #6a0dad; border: none; color: white; padding: 10px 15px; margin-top: 10px; cursor: pointer; border-radius: 5px; }
-    button:hover { background-color: #8a2be2; }
   </style>
 </head>
 <body>
@@ -35,7 +33,7 @@
 
   <main>
     <section class="home">
-      <img src="pemilik top trophy.jpg" alt="Pemilik Top Trophy">
+      <img src="images/pemilik top trophy.jpg" alt="Pemilik Top Trophy">
       <div class="keterangan">
         <h1 id="judul-home">Selamat Datang di Top Trophy</h1>
         <p>Top Trophy: Solusi Terbaik untuk Kebutuhan Penghargaan Anda</p>
@@ -47,37 +45,29 @@
     </section>
   </main>
   
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const sapaan = [
-        "Hi, strangers! 👀",
-        "Selamat datang di dunia piala, bukan dunia tipu-tipu 🏆",
-        "Mampir doang? Beli juga dong~ 🛍",
-        "Top Trophy: tempat tropi top! 😎"
-      ];
-  
-      const pesan = sapaan[Math.floor(Math.random() * sapaan.length)];
-      alert(pesan);
-  
-      // Efek lucu buat judul kalau ada
-      const judul = document.getElementById("judul-home");
-      if (judul) {
-        judul.style.transition = "transform 0.5s ease";
-        judul.addEventListener("mouseover", () => {
-          judul.style.transform = "rotate(2deg) scale(1.05)";
-        });
-        judul.addEventListener("mouseout", () => {
-          judul.style.transform = "rotate(0deg) scale(1)";
-        });
-      }
-    });
-  </script>
-  
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const judul = document.getElementById("judul-home");
+
+    if (judul) {
+      judul.style.transition = "transform 0.4s ease, text-shadow 0.4s ease";
+
+      judul.addEventListener("mouseover", () => {
+        judul.style.transform = "translateY(-5px)";
+        judul.style.textShadow = "0 0 10px rgba(255, 255, 255, 0.6)";
+      });
+
+      judul.addEventListener("mouseout", () => {
+        judul.style.transform = "translateY(0)";
+        judul.style.textShadow = "none";
+      });
+    }
+  });
+</script>
   
   <footer>
     <p>Top Trophy | <a href="https://www.instagram.com/toptrophy.blitar/" target="_blank">Instagram</a> | <a href="https://wa.me/6281333864502" target="_blank">WhatsApp</a></p>
   </footer>
-
 
 </body>
 </html>
